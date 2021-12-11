@@ -15,8 +15,8 @@ public class Player: MonoBehaviour {
   void Start () {
     Application.targetFrameRate = 60;
     gridPosition.x = 0;
-    gridPosition.y = 3;
-    transform.position = new Vector3(gridPosition.x, 1, gridPosition.y);
+    gridPosition.y = 2;
+    transform.position = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
   }
 
   public void OnTriggerEnter2D(Collider2D other) {
@@ -30,7 +30,7 @@ public class Player: MonoBehaviour {
   public void MoveTo(Vector2Int pos) {
     isMove = true;
     gridPosition = pos;
-    targetPosition = new Vector3(gridPosition.x, 1, gridPosition.y);
+    targetPosition = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
   }
 
   public void TakeDamage(int damage) {
@@ -50,7 +50,7 @@ public class Player: MonoBehaviour {
       if (Vector3.Distance(transform.position, targetPosition) < 0.01f) {
         transform.position = targetPosition;
         isMove = false;
-        Actions.OnPlayerMoveFinish(gridPosition.x, gridPosition.y);
+        Actions.OnPlayerMoveFinish(gridPosition.x * 2, gridPosition.y);
       }
     }
   }

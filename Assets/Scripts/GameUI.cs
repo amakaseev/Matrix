@@ -17,9 +17,9 @@ public class GameUI: MonoBehaviour {
   public void SetHitpoints(int hp) {
     for (int i = 0; i < hitpoints.Length; ++i) {
       if (i < hp) {
-        hitpoints[i].SetActive(false);
-      } else {
         hitpoints[i].SetActive(true);
+      } else {
+        hitpoints[i].SetActive(false);
       }
     }
   }
