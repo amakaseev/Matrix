@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GridCell: MonoBehaviour {
 
-  public Vector2Int gridPos = new Vector2Int(1, 0);
-  public Vector2Int direction;
+  public Vector2Int gridPos;
+  public Vector2Int direction = new Vector2Int(1, 0);
   public int damage = 0;
 
 }
