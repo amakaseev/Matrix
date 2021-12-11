@@ -6,11 +6,11 @@ public class Enemy: MonoBehaviour {
   public float speed;
 
   void OnEnable() {
-    Actions.OnCardActive += OnCardActive;
+    //Actions.OnCardActive += OnCardActive;
   }
 
   void OnDisable() {
-    Actions.OnCardActive -= OnCardActive;
+    //Actions.OnCardActive -= OnCardActive;
   }
 
   virtual public void OnCardActive(int index) {

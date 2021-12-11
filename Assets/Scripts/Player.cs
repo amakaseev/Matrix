@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class Player: MonoBehaviour {
 
-  public Vector2 speed;
-
-  Vector2 _moveDirection = Vector3.zero;
+  public float  moveSpeed = 2;
+  public bool isMove = false;
+  public Vector2Int gridPosition;
+  public Vector3 targetPosition;
 
   void Start () {
     Application.targetFrameRate = 60;
+    gridPosition.x = 0;
+    gridPosition.y = 2;
+    transform.position = new Vector3(gridPosition.x, 1, gridPosition.y);
   }
 
   public void OnTriggerEnter2D(Collider2D other) {
@@ -22,16 +26,36 @@ public class Player: MonoBehaviour {
   }
 
   public void OnMove(InputValue input) {
-    _moveDirection = input.Get<Vector2>();
-    Debug.Log(_moveDirection);
+    if (!isMove) {
+      var direction = input.Get<Vector2>();
+      if (direction.x > 0) {
+        MoveTo(gridPosition + new Vector2Int(1, 0));
+      } else if (direction.x < 0) {
+        MoveTo(gridPosition + new Vector2Int(-1, 0));
+      } else if (direction.y > 0) {
+        MoveTo(gridPosition + new Vector2Int(0, 1));
+      } else if (direction.y < 0) {
+        MoveTo(gridPosition + new Vector2Int(0, -1));
+      }
+    }
+  }
+
+  public void MoveTo(Vector2Int pos) {
+    isMove = true;
+    gridPosition = pos;
+    targetPosition = new Vector3(gridPosition.x, 1, gridPosition.y);
   }
 
   void Update() {
-    if ((_moveDirection.x != 0) || (_moveDirection.y != 0)) {
-      Vector3 position = transform.position;
-      position.x += speed.x * _moveDirection.x * Time.deltaTime;
-      position.y += speed.y * _moveDirection.y * Time.deltaTime;
-      transform.position = position;
+    if (isMove) {
+      float step =  moveSpeed * Time.deltaTime;
+      transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+
+      if (Vector3.Distance(transform.position, targetPosition) < 0.01f) {
+        transform.position = targetPosition;
+        isMove = false;
+        Actions.OnPlayerMoveFinish(gridPosition.x, gridPosition.y);
+      }
     }
   }
 

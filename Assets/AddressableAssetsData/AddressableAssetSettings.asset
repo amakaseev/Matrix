@@ -47,6 +47,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d481d40f33a504bffb335b9a5e38c501, type: 2}
   - {fileID: 11400000, guid: cb2eb254170c444a2bd66d4a0aba98f6, type: 2}
   - {fileID: 11400000, guid: 651aae1f9cfbc4253bc732c4738201f3, type: 2}
+  - {fileID: 11400000, guid: b82f58eb79d6c4e798618a1f88c575bc, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -92,6 +93,7 @@ MonoBehaviour:
     - Locale-en
     - Preload
     - Locale-ru
+    - Locale-uk
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 89bcab51e88434d48bd4b17f51960721, type: 2}
@@ -113,4 +115,6 @@ MonoBehaviour:
     m_RegisteredServiceTypeRefs: []
     m_GlobalProfileVariablesInfos:
     - key: PrivateIpAddress
-      value: 10.10.14.81
+      value: 10.24.15.243
+    - key: PrivateIpAddress_1
+      value: 10.21.25.22
