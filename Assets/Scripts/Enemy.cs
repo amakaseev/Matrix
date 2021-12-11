@@ -5,8 +5,16 @@ using UnityEngine;
 public class Enemy: MonoBehaviour {
   public float speed;
 
-  void Start() {
+  void OnEnable() {
+    Actions.OnCardActive += OnCardActive;
+  }
 
+  void OnDisable() {
+    Actions.OnCardActive -= OnCardActive;
+  }
+
+  virtual public void OnCardActive(int index) {
+    Debug.Log("OnCardActive: " + index);
   }
 
   void Update() {
