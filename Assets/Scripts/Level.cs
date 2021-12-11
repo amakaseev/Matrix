@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Level: MonoBehaviour {
 
@@ -71,6 +72,15 @@ public class Level: MonoBehaviour {
       var cell = _cells[0];
       _cells.Remove(cell);
       Destroy(cell);
+    }
+  }
+
+  void OnSelect(InputValue input) {
+    Debug.Log("OnSelect" + input.Get<Vector2>());
+    RaycastHit hitInfo = new RaycastHit();
+    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(input.Get<Vector2>()), out hitInfo);
+    if (hit) {
+      Debug.Log("Hit " + hitInfo.transform.gameObject.name);
     }
   }
 

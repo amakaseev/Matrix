@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6643106248515556015}
   - component: {fileID: 6643106248515556012}
+  - component: {fileID: 839966449939372663}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -49,7 +50,37 @@ MonoBehaviour:
   - {fileID: 81102632661585104, guid: 6a70917186296f24086846aab3f8358e, type: 3}
   gridWals:
   - {fileID: 8239668588119921988, guid: e5ceaa214b970c348b9e7cca7cad8319, type: 3}
-  gridHeight: 7
+  gridHeight: 5
   enemiesPrefabs:
   - {fileID: 956290775939429698, guid: e619e07fe7078467d83f58f936dae430, type: 3}
   player: {fileID: 0}
+--- !u!114 &839966449939372663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643106248515556013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 81344f41ec66341dc95228ee587b829a, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
