@@ -10,19 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: New Table Shared Data
+  m_Name: Localization table Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: New Table
-  m_TableCollectionNameGuidString: 19da9472558334161991fed786c08c13
-  m_Entries: []
+  m_TableCollectionName: Localization table
+  m_TableCollectionNameGuidString: 323d397190ee841a2add7f92e5555033
+  m_Entries:
+  - m_Id: 54151602176
+    m_Key: Key
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 808638289453252632
+    rid: 808638289453252727
   references:
     version: 2
     RefIds:
-    - rid: 808638289453252632
+    - rid: 808638289453252727
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1639236955271
+        m_CustomEpoch: 1639240763139

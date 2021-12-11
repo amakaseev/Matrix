@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
-  m_Name: New Table
+  m_Name: Localization table
   m_EditorClassIdentifier: 
-  m_SharedTableData: {fileID: 11400000, guid: 19da9472558334161991fed786c08c13, type: 2}
+  m_SharedTableData: {fileID: 11400000, guid: 323d397190ee841a2add7f92e5555033, type: 2}
   m_Tables:
-  - {fileID: 11400000, guid: 1e8b62af7ed614a68b99f7138731b9fd, type: 2}
-  - {fileID: 11400000, guid: 7c292205d666c4e579e186f6ca431133, type: 2}
-  - {fileID: 11400000, guid: 002b83bc1b201425baf75abf018f167f, type: 2}
+  - {fileID: 11400000, guid: 5e5a5c3d79b3142c0abf97d7ed82fc80, type: 2}
+  - {fileID: 11400000, guid: c69b634b510ae4370b89b9ada34954c7, type: 2}
+  - {fileID: 11400000, guid: a787ed33f1e3d43f18f3d472006db29b, type: 2}
   m_Extensions: []
   m_Group: String Table
   references:
