@@ -59,7 +59,7 @@ public class Level: MonoBehaviour {
       }
       cell.gridPos = new Vector2Int(_lastLine, y);
       cell.transform.parent = transform;
-      cell.transform.position = new Vector3(_lastLine, 0, y * 2);
+      cell.transform.position = new Vector3(_lastLine * 2, 0, y);
 
       _cells.Add(cell);
     }
