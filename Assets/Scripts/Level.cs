@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class Level: MonoBehaviour {
 
-  public Enemy[] enemiesPrefabs;
-  public float spawnDelay;
+  public GameObject[] gridCells;
+  public int          gridHeight;
+  public Enemy[]      enemiesPrefabs;
+  public float        spawnDelay;
 
   float _currentSpawnTime;
+
+  void Start() {
+    GenerateLevel();
+  }
+
+  void GenerateLevel() {
+    int gridWidth = 10;
+    for (int x = 0; x < gridWidth; ++x) {
+      for (int y = 0; y < gridHeight; ++y) {
+        var cell = Instantiate(gridCells[Random.Range(0, gridCells.Length)]);
+        cell.transform.parent = transform;
+        cell.transform.position = new Vector3(x, 0, y);
+      }
+    }
+  }
 
   void Update() {
     _currentSpawnTime += Time.deltaTime;
