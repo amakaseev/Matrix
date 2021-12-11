@@ -11,6 +11,14 @@ public class Player : MonoBehaviour {
     Application.targetFrameRate = 60;
   }
 
+  public void OnTriggerEnter2D(Collider2D other) {
+    Debug.Log("OnTriggerEnter2D: " + other.tag);
+    if (other.tag == "Enemy") {
+      Debug.Log(other.gameObject.GetComponent<Enemy>());
+      // Actions.OnEnemyInteraction(other.gameObject.GetComponent<Enemy>());
+    }
+  }
+
   public void OnMove(InputValue input) {
     _moveDirection = input.Get<Vector2>();
     Debug.Log(_moveDirection);
