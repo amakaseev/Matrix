@@ -5,15 +5,17 @@ using UnityEngine.InputSystem;
 
 public class Player: MonoBehaviour {
 
+  public int hitpoints = 3;
   public float  moveSpeed = 2;
   public bool isMove = false;
   public Vector2Int gridPosition;
   public Vector3 targetPosition;
+  public Level level;
 
   void Start () {
     Application.targetFrameRate = 60;
     gridPosition.x = 0;
-    gridPosition.y = 2;
+    gridPosition.y = 3;
     transform.position = new Vector3(gridPosition.x, 1, gridPosition.y);
   }
 
@@ -25,25 +27,19 @@ public class Player: MonoBehaviour {
     }
   }
 
-  public void OnMove(InputValue input) {
-    if (!isMove) {
-      var direction = input.Get<Vector2>();
-      if (direction.x > 0) {
-        MoveTo(gridPosition + new Vector2Int(1, 0));
-      } else if (direction.x < 0) {
-        MoveTo(gridPosition + new Vector2Int(-1, 0));
-      } else if (direction.y > 0) {
-        MoveTo(gridPosition + new Vector2Int(0, 1));
-      } else if (direction.y < 0) {
-        MoveTo(gridPosition + new Vector2Int(0, -1));
-      }
-    }
-  }
-
   public void MoveTo(Vector2Int pos) {
     isMove = true;
     gridPosition = pos;
     targetPosition = new Vector3(gridPosition.x, 1, gridPosition.y);
+  }
+
+  public void TakeDamage(int damage) {
+    hitpoints -= damage;
+    Actions.OnPlayerTakeDamage(damage, hitpoints);
+    Debug.Log("OnPlayerTakeDamage: " + damage + ", " + hitpoints);
+    if (hitpoints <= 0) {
+      Actions.OnPlayerDie();
+    }
   }
 
   void Update() {
