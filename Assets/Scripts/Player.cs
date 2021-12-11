@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour {
+public class Player: MonoBehaviour {
+
+  public Vector2 speed;
 
   Vector2 _moveDirection = Vector3.zero;
 
@@ -22,6 +24,15 @@ public class Player : MonoBehaviour {
   public void OnMove(InputValue input) {
     _moveDirection = input.Get<Vector2>();
     Debug.Log(_moveDirection);
+  }
+
+  void Update() {
+    if ((_moveDirection.x != 0) || (_moveDirection.y != 0)) {
+      Vector3 position = transform.position;
+      position.x += speed.x * _moveDirection.x * Time.deltaTime;
+      position.y += speed.y * _moveDirection.y * Time.deltaTime;
+      transform.position = position;
+    }
   }
 
 }
