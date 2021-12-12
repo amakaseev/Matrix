@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelCard: MonoBehaviour{
 
-    public Vector2 direction;
+    public Vector2Int direction;
     public bool jump;
     public bool boost;
 
