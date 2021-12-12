@@ -40,10 +40,11 @@ public class GridCell: MonoBehaviour {
   }
 
   public void AddCard(LevelCard cardPrefab) {
-    // TODO: AddCard prefab to this cell
-    _card = Instantiate(cardPrefab);
-    _card.transform.parent = transform;
-    _card.transform.localPosition = new Vector3(0, 0.02f, 0);
+    if (_card == null) {
+      _card = Instantiate(cardPrefab);
+      _card.transform.parent = transform;
+      _card.transform.localPosition = new Vector3(0, 0.02f, 0);
+    }
   }
 
   public void RemoveCard() {
