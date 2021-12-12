@@ -11,6 +11,7 @@ public class Player: MonoBehaviour {
   public Vector2Int gridPosition;
   public Vector3 targetPosition;
   public Level level;
+  public bool isDead = false;
 
   void Start () {
     Application.targetFrameRate = 60;
@@ -38,6 +39,7 @@ public class Player: MonoBehaviour {
     Actions.OnPlayerTakeDamage(damage, hitpoints);
     Debug.Log("OnPlayerTakeDamage: " + damage + ", " + hitpoints);
     if (hitpoints <= 0) {
+      isDead = true;
       Actions.OnPlayerDie();
     }
   }
