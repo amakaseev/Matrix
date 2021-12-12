@@ -101,6 +101,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonCard
       objectReference: {fileID: 0}
+    - target: {fileID: 8456381966769258037, guid: dce2e49bfa23044e8bd4888b587b8aa4, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456381966769258037, guid: dce2e49bfa23044e8bd4888b587b8aa4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8036913f2696140eea93e794ea866671, type: 3}
     - target: {fileID: 8456381966769258039, guid: dce2e49bfa23044e8bd4888b587b8aa4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
