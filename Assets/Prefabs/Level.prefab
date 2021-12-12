@@ -50,10 +50,13 @@ MonoBehaviour:
   - {fileID: 81102632661585104, guid: 6a70917186296f24086846aab3f8358e, type: 3}
   gridWals:
   - {fileID: 8239668588119921988, guid: e5ceaa214b970c348b9e7cca7cad8319, type: 3}
+  - {fileID: 4563612314341812601, guid: f4130570f219b1940b1efbb547fc75de, type: 3}
   gridHeight: 5
   enemiesPrefabs:
   - {fileID: 956290775939429698, guid: e619e07fe7078467d83f58f936dae430, type: 3}
   player: {fileID: 0}
+  cameraMover: {fileID: 0}
+  cardsPrefabs: []
 --- !u!114 &839966449939372663
 MonoBehaviour:
   m_ObjectHideFlags: 0

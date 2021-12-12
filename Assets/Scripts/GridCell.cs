@@ -20,7 +20,7 @@ public class GridCell: MonoBehaviour {
     // TODO: AddCard prefab to this cell
     _card = Instantiate(cardPrefab);
     _card.transform.parent = transform;
-    _card.transform.localPosition = new Vector3(0, 1f, 0);
+    _card.transform.localPosition = new Vector3(0, 0.1f, 0);
   }
 
 }
