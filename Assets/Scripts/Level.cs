@@ -83,7 +83,7 @@ public class Level: MonoBehaviour {
     for (int y = 0; y < gridHeight; ++y) {
       var cell = _cells[0];
       _cells.Remove(cell);
-      Destroy(cell);
+      Destroy(cell.gameObject);
     }
   }
 
