@@ -151,9 +151,9 @@ public class Level: MonoBehaviour {
 
     Actions.OnLineComplete(player.gridPosition.x);
 
-    if (_cells.Count < gridHeight * 20) {
+    // if (_cells.Count < gridHeight * 20) {
       GenerateLine(false);
-    }
+    // }
   }
 
   void Update() {
