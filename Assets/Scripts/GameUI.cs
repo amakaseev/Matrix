@@ -5,14 +5,21 @@ using UnityEngine.UI;
 
 public class GameUI: MonoBehaviour {
   public GameObject[] hitpoints;
+  public Text         linesCount;
   public GameObject   gameOverPanel;
 
   void Start() {
     gameOverPanel.SetActive(false);
+    linesCount.text = "0";
 
+    Actions.OnLineComplete += OnLineComplete;
     Actions.OnPlayerUpdateHitpoints += OnPlayerUpdateHitpoints;
     Actions.OnPlayerTakeDamage += OnPlayerTakeDamage;
     Actions.OnPlayerDie += OnPlayerDie;
+  }
+
+  void OnLineComplete(int line) {
+    linesCount.text = line.ToString();
   }
 
   void OnPlayerUpdateHitpoints(int hitpoints) {
@@ -39,6 +46,7 @@ public class GameUI: MonoBehaviour {
 
   public void Play() {
     gameOverPanel.SetActive(false);
+    linesCount.text = "0";
 
     Actions.OnPlay();
   }

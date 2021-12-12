@@ -127,10 +127,13 @@ public class Level: MonoBehaviour {
       player.TakeDamage(damage);
     }
 
-    RemoveLine();
+    if (_cells.Count > gridHeight * 20) {
+      RemoveLine();
+    }
 
     _timeToStep = 2;
 
+    Actions.OnLineComplete(player.gridPosition.x);
     GenerateLine(false);
   }
 
