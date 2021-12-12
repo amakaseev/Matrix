@@ -58,7 +58,11 @@ public class Player: MonoBehaviour {
       if (Vector3.Distance(transform.position, targetPosition) < 0.01f) {
         transform.position = targetPosition;
         isMove = false;
-        Actions.OnPlayerMoveFinish(gridPosition.x * 2, gridPosition.y);
+        Actions.OnPlayerMoveFinish();
+        if (gridPosition.x == 101) {
+          isDead = true;
+          Actions.OnPlayerWin();
+        }
       }
     }
   }

@@ -27,6 +27,7 @@ public class Level: MonoBehaviour {
     Actions.OnPlay += OnPlay;
     Actions.OnPlayerMoveFinish += OnPlayerMoveFinish;
     Actions.OnPlayerDie += OnPlayerDie;
+    Actions.OnPlayerWin += OnPlayerWin;
     Actions.OnCardActive += OnCardActive;
   }
 
@@ -48,7 +49,7 @@ public class Level: MonoBehaviour {
     _timeToStep = 2;
 
     for (int x = 0; x < 7; ++x) {
-      GenerateLine(false);
+      GenerateLine(true);
     }
     for (int x = 0; x < 7; ++x) {
       GenerateLine(false);
@@ -56,6 +57,10 @@ public class Level: MonoBehaviour {
   }
 
   void GenerateLine(bool safe) {
+    if (_lastLine >= 101) {
+      return;
+    }
+
     for (int y = 0; y < gridHeight; ++y) {
       GridCell cell;
       if (safe) {
@@ -112,6 +117,11 @@ public class Level: MonoBehaviour {
     gameObject.GetComponent<PlayerInput>().enabled = false;
   }
 
+  void OnPlayerWin() {
+    Time.timeScale = 0;
+    gameObject.GetComponent<PlayerInput>().enabled = false;
+  }
+  
   void OnPlay() {
     Debug.Log("Play");
 
@@ -121,7 +131,7 @@ public class Level: MonoBehaviour {
     Time.timeScale = 1;
   }
 
-  void OnPlayerMoveFinish(int x, int y) {
+  void OnPlayerMoveFinish() {
     int damage = GetGridCell(player.gridPosition).damage;
     if (damage > 0) {
       player.TakeDamage(damage);
@@ -141,7 +151,7 @@ public class Level: MonoBehaviour {
     _timeToStep -= Time.deltaTime;
     if (_timeToStep <= 0) {
       player.MoveTo(player.gridPosition + GetGridCell(player.gridPosition).direction);
-      _timeToStep = 1;
+      _timeToStep = 2;
     }
   }
 

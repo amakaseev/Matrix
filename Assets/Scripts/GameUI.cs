@@ -7,15 +7,18 @@ public class GameUI: MonoBehaviour {
   public GameObject[] hitpoints;
   public Text         linesCount;
   public GameObject   gameOverPanel;
+  public GameObject   gameWinPanel;
 
   void Start() {
     gameOverPanel.SetActive(false);
+    gameWinPanel.SetActive(false);
     linesCount.text = "0";
 
     Actions.OnLineComplete += OnLineComplete;
     Actions.OnPlayerUpdateHitpoints += OnPlayerUpdateHitpoints;
     Actions.OnPlayerTakeDamage += OnPlayerTakeDamage;
     Actions.OnPlayerDie += OnPlayerDie;
+    Actions.OnPlayerWin += OnPlayerWin;
   }
 
   void OnLineComplete(int line) {
@@ -34,6 +37,10 @@ public class GameUI: MonoBehaviour {
     gameOverPanel.SetActive(true);
   }
 
+  void OnPlayerWin() {
+    gameWinPanel.SetActive(true);
+  }
+
   public void SetHitpoints(int hp) {
     for (int i = 0; i < hitpoints.Length; ++i) {
       if (i < hp) {
@@ -46,6 +53,8 @@ public class GameUI: MonoBehaviour {
 
   public void Play() {
     gameOverPanel.SetActive(false);
+    gameWinPanel.SetActive(false);
+
     linesCount.text = "0";
 
     Actions.OnPlay();

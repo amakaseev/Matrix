@@ -480,6 +480,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2019180492172383960, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_Text
+      value: WIN
+      objectReference: {fileID: 0}
+    - target: {fileID: 2019180492172383960, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8537105
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834155231833195217, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4599950516148097544, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -583,6 +595,22 @@ PrefabInstance:
     - target: {fileID: 4599950516148097548, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6498514120815790090, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529792181918558916, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_Text
+      value: DIE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529792181918558916, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_Color.g
+      value: 0.079807915
+      objectReference: {fileID: 0}
+    - target: {fileID: 7529792181918558916, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
