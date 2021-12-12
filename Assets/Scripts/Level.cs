@@ -150,7 +150,9 @@ public class Level: MonoBehaviour {
   void Update() {
     _timeToStep -= Time.deltaTime;
     if (_timeToStep <= 0) {
+      var prevPos = player.gridPosition;
       player.MoveTo(player.gridPosition + GetGridCell(player.gridPosition).direction);
+      GetGridCell(prevPos).RemoveCard();
       _timeToStep = 2;
     }
   }
