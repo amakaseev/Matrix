@@ -15,6 +15,7 @@ public class Level: MonoBehaviour {
   int             _lastLine;
   float           _timeToStep;
   List<GridCell>  _cells = new List<GridCell>();
+  Vector2         _selectPosition;
 
   void Start() {
     GenerateLevel();
@@ -75,12 +76,16 @@ public class Level: MonoBehaviour {
     }
   }
 
+  void OnMove(InputValue input) {
+    _selectPosition = input.Get<Vector2>();
+  }
+
   void OnSelect(InputValue input) {
-    Debug.Log("OnSelect" + input.Get<Vector2>());
     RaycastHit hitInfo = new RaycastHit();
-    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(input.Get<Vector2>()), out hitInfo);
-    if (hit) {
-      Debug.Log("Hit " + hitInfo.transform.gameObject.name);
+    bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(_selectPosition), out hitInfo);
+    if (hit && hitInfo.transform.tag == "Cell") {
+      Debug.Log("OnSelect " + hitInfo.transform.gameObject);
+      // TODO: set card to this cell
     }
   }
 

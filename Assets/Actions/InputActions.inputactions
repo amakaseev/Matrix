@@ -6,13 +6,22 @@
             "id": "345deede-5903-42c6-bb2f-678f22ed2869",
             "actions": [
                 {
-                    "name": "Select",
+                    "name": "Move",
                     "type": "Value",
                     "id": "e9c31c5f-3589-44a2-836e-923c3a09644f",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Select",
+                    "type": "Button",
+                    "id": "89719d99-7e24-42cf-95c4-3b9460994aa6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -23,6 +32,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "04c25549-7a1e-4545-aa87-5b04c9f8cbfa",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
