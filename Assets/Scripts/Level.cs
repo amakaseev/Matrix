@@ -11,6 +11,7 @@ public class Level: MonoBehaviour {
   public int          gridHeight;
   public Enemy[]      enemiesPrefabs;
   public Player       player;
+  public LevelCard[]  cardsPrefabs;
 
   int             _lastLine;
   float           _timeToStep;
@@ -89,12 +90,12 @@ public class Level: MonoBehaviour {
       if (hit && hitInfo.transform.tag == "Cell") {
         Debug.Log("OnSelect " + hitInfo.transform.gameObject);
         // TODO: set card to this cell
-        hitInfo.transform.gameObject.GetComponent<GridCell>().AddCard(_currentCard);
+        hitInfo.transform.gameObject.GetComponent<GridCell>().AddCard(cardsPrefabs[_currentCard]);
       }
     }
   }
 
-  void OnCardActive (int index) {
+  void OnCardActive(int index) {
     _currentCard = index;
   }
 

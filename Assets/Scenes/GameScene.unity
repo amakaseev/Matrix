@@ -451,6 +451,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2329512493663928521, guid: c9ee3af8fcc9c418ab6b7006944c34b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2329512493663928522, guid: c9ee3af8fcc9c418ab6b7006944c34b1, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -593,6 +597,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 867141032}
+    - target: {fileID: 6643106248515556012, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
+      propertyPath: cardsPrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6643106248515556012, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
+      propertyPath: cardsPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: -1323953607945771140, guid: 8b3a1f98cd73f0a469f4fe5ae0877104, type: 3}
     - target: {fileID: 6643106248515556013, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
       propertyPath: m_Name
       value: Level
