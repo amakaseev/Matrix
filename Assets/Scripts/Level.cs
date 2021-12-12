@@ -132,19 +132,27 @@ public class Level: MonoBehaviour {
   }
 
   void OnPlayerMoveFinish() {
-    int damage = GetGridCell(player.gridPosition).damage;
-    if (damage > 0) {
-      player.TakeDamage(damage);
+    var cell = GetGridCell(player.gridPosition);
+    if (cell != null) {
+      int damage = cell.damage;
+      if (damage > 0) {
+        player.TakeDamage(damage);
+      }
+    } else {
+      player.TakeDamage(3);
     }
 
-    if (_cells.Count > gridHeight * 20) {
-      RemoveLine();
-    }
+    // if (_cells.Count > gridHeight * 20) {
+    //   RemoveLine();
+    // }
 
     _timeToStep = 2;
 
     Actions.OnLineComplete(player.gridPosition.x);
-    GenerateLine(false);
+
+    if (_cells.Count < gridHeight * 20) {
+      GenerateLine(false);
+    }
   }
 
   void Update() {
