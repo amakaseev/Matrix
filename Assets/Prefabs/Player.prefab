@@ -97,8 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitpoints: 3
-  moveSpeed: 2
+  moveSpeed: 2.5
   isMove: 0
+  isBoost: 0
+  isJump: 0
   gridPosition: {x: 0, y: 0}
   targetPosition: {x: 0, y: 0, z: 0}
   level: {fileID: 0}

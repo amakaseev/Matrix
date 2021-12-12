@@ -14,6 +14,7 @@ public class Level: MonoBehaviour {
   public Player       player;
   public CameraMover  cameraMover;
   public LevelCard[]  cardsPrefabs;
+  public float        stepTime = 1.5f;
 
   int             _lastLine;
   float           _timeToStep;
@@ -46,7 +47,7 @@ public class Level: MonoBehaviour {
     }
 
     _lastLine = 0;
-    _timeToStep = 2;
+    _timeToStep = stepTime;
 
     for (int x = 0; x < 7; ++x) {
       GenerateLine(true);
@@ -146,7 +147,7 @@ public class Level: MonoBehaviour {
     //   RemoveLine();
     // }
 
-    _timeToStep = 2;
+    _timeToStep = stepTime;
 
     Actions.OnLineComplete(player.gridPosition.x);
 
@@ -159,9 +160,13 @@ public class Level: MonoBehaviour {
     _timeToStep -= Time.deltaTime;
     if (_timeToStep <= 0) {
       var prevPos = player.gridPosition;
-      player.MoveTo(player.gridPosition + GetGridCell(player.gridPosition).direction);
+      if (GetGridCell(player.gridPosition).jump) {
+        player.JumpTo(player.gridPosition + GetGridCell(player.gridPosition).direction);
+      } else {
+        player.MoveTo(player.gridPosition + GetGridCell(player.gridPosition).direction, GetGridCell(player.gridPosition).boost);
+      }
       GetGridCell(prevPos).RemoveCard();
-      _timeToStep = 2;
+      _timeToStep = stepTime;
     }
   }
 
