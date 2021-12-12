@@ -19,6 +19,26 @@ public class GridCell: MonoBehaviour {
     }
   }
 
+  public bool boost {
+    get {
+      if (_card != null) {
+        return _card.boost;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  public bool jump {
+    get {
+      if (_card != null) {
+        return _card.jump;
+      } else {
+        return false;
+      }
+    }
+  }
+
   public void AddCard(LevelCard cardPrefab) {
     // TODO: AddCard prefab to this cell
     _card = Instantiate(cardPrefab);

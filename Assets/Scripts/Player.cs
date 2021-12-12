@@ -8,6 +8,8 @@ public class Player: MonoBehaviour {
   public int hitpoints = 3;
   public float  moveSpeed = 2;
   public bool isMove = false;
+  public bool isBoost = false;
+  public bool isJump = false;
   public Vector2Int gridPosition;
   public Vector3 targetPosition;
   public Level level;
@@ -34,8 +36,16 @@ public class Player: MonoBehaviour {
     }
   }
 
-  public void MoveTo(Vector2Int pos) {
+  public void MoveTo(Vector2Int pos, bool boost) {
     isMove = true;
+    isBoost = boost;
+    gridPosition = pos;
+    targetPosition = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
+  }
+
+  public void JumpTo(Vector2Int pos) {
+    isMove = true;
+    isJump = true;
     gridPosition = pos;
     targetPosition = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
   }
@@ -51,13 +61,15 @@ public class Player: MonoBehaviour {
   }
 
   void Update() {
-    if (isMove) {
-      float step =  moveSpeed * Time.deltaTime;
+    if (isMove || isJump) {
+      float step =  moveSpeed * Time.deltaTime * (isBoost? 2f : 1f);
       transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 
       if (Vector3.Distance(transform.position, targetPosition) < 0.01f) {
         transform.position = targetPosition;
         isMove = false;
+        isBoost = false;
+        isJump = false;
         Actions.OnPlayerMoveFinish();
         if (gridPosition.x == 101) {
           isDead = true;
