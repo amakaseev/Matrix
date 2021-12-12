@@ -26,4 +26,11 @@ public class GridCell: MonoBehaviour {
     _card.transform.localPosition = new Vector3(0, 0.02f, 0);
   }
 
+  public void RemoveCard() {
+    if (_card != null) {
+      Destroy(_card.gameObject);
+      _card = null;
+    }
+  }
+
 }
