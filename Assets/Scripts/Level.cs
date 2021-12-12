@@ -129,6 +129,8 @@ public class Level: MonoBehaviour {
     player.Restart();
     cameraMover.Restart();
     Time.timeScale = 1;
+
+    gameObject.GetComponent<PlayerInput>().enabled = false;
   }
 
   void OnPlayerMoveFinish() {
