@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class Level: MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class Level: MonoBehaviour {
   public int          gridHeight;
   public Enemy[]      enemiesPrefabs;
   public Player       player;
+  public CameraMover  cameraMover;
   public LevelCard[]  cardsPrefabs;
 
   int             _lastLine;
@@ -22,8 +24,7 @@ public class Level: MonoBehaviour {
   void Start() {
     GenerateLevel();
 
-    _timeToStep = 2;
-
+    Actions.OnPlay += OnPlay;
     Actions.OnPlayerMoveFinish += OnPlayerMoveFinish;
     Actions.OnPlayerDie += OnPlayerDie;
     Actions.OnCardActive += OnCardActive;
@@ -39,8 +40,15 @@ public class Level: MonoBehaviour {
   }
 
   void GenerateLevel() {
+    while (_cells.Count > 0) {
+      RemoveLine();
+    }
+
+    _lastLine = 0;
+    _timeToStep = 2;
+
     for (int x = 0; x < 7; ++x) {
-      GenerateLine(true);
+      GenerateLine(false);
     }
     for (int x = 0; x < 7; ++x) {
       GenerateLine(false);
@@ -84,7 +92,7 @@ public class Level: MonoBehaviour {
   }
 
   void OnSelect(InputValue input) {
-    if (_currentCard != -1) {
+    if (_currentCard != -1 && !EventSystem.current.IsPointerOverGameObject()) {
       RaycastHit hitInfo = new RaycastHit();
       bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(_selectPosition), out hitInfo);
       if (hit && hitInfo.transform.tag == "Cell") {
@@ -104,6 +112,15 @@ public class Level: MonoBehaviour {
     gameObject.GetComponent<PlayerInput>().enabled = false;
   }
 
+  void OnPlay() {
+    Debug.Log("Play");
+
+    GenerateLevel();
+    player.Restart();
+    cameraMover.Restart();
+    Time.timeScale = 1;
+  }
+
   void OnPlayerMoveFinish(int x, int y) {
     int damage = GetGridCell(player.gridPosition).damage;
     if (damage > 0) {
@@ -121,7 +138,7 @@ public class Level: MonoBehaviour {
     _timeToStep -= Time.deltaTime;
     if (_timeToStep <= 0) {
       player.MoveTo(player.gridPosition + GetGridCell(player.gridPosition).direction);
-      _timeToStep = 2;
+      _timeToStep = 1;
     }
   }
 

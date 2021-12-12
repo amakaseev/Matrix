@@ -8,6 +8,16 @@ public class CameraMover: MonoBehaviour {
   public float speed = 1;
   public Transform target;
 
+  Vector3 defaultPosition;
+
+  void Start() {
+    defaultPosition = transform.position;
+  }
+
+  public void Restart() {
+    transform.position = defaultPosition;
+  }
+
   void Update() {
     Vector3 p1 = transform.position;
     Vector3 p2 = target.transform.position;

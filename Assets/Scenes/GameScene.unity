@@ -259,6 +259,11 @@ Transform:
   m_Father: {fileID: 418033215}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 27.608, y: 37.875, z: 0.933}
+--- !u!1 &687195520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6498514120815790090, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+  m_PrefabInstance: {fileID: 4599950516203123775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &867141032 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2329512493663928520, guid: c9ee3af8fcc9c418ab6b7006944c34b1, type: 3}
@@ -480,6 +485,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4599950516148097543, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
+      propertyPath: gameOverPanel
+      value: 
+      objectReference: {fileID: 687195520}
     - target: {fileID: 4599950516148097544, guid: cfc9b11cedd1249a09bcddbeba14990a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -597,6 +606,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 867141032}
+    - target: {fileID: 6643106248515556012, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
+      propertyPath: cameraMover
+      value: 
+      objectReference: {fileID: 418033216}
     - target: {fileID: 6643106248515556012, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
       propertyPath: cardsPrefabs.Array.size
       value: 1

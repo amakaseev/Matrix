@@ -15,9 +15,15 @@ public class Player: MonoBehaviour {
 
   void Start () {
     Application.targetFrameRate = 60;
+    Restart();
+  }
+
+  public void Restart() {
+    hitpoints = 3;
     gridPosition.x = 0;
     gridPosition.y = 2;
     transform.position = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
+    Actions.OnPlayerUpdateHitpoints(hitpoints);
   }
 
   public void OnTriggerEnter2D(Collider2D other) {
