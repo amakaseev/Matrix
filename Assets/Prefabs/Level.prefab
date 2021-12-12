@@ -56,7 +56,12 @@ MonoBehaviour:
   - {fileID: 956290775939429698, guid: e619e07fe7078467d83f58f936dae430, type: 3}
   player: {fileID: 0}
   cameraMover: {fileID: 0}
-  cardsPrefabs: []
+  cardsPrefabs:
+  - {fileID: 5182903336109659017, guid: 32dd767426718479c9595efc0c87ad9d, type: 3}
+  - {fileID: -1012398578755460795, guid: f488ad16cc896244d8aaa61dd90e0611, type: 3}
+  - {fileID: 5989881141683843911, guid: 4e2900d2c3df64dea9bad197bd04f6f8, type: 3}
+  - {fileID: 5360308889287452493, guid: 8b3a1f98cd73f0a469f4fe5ae0877104, type: 3}
+  - {fileID: -608673191062505054, guid: a1acb4063f80744c48fa9a857b901047, type: 3}
 --- !u!114 &839966449939372663
 MonoBehaviour:
   m_ObjectHideFlags: 0

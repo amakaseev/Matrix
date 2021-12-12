@@ -629,14 +629,6 @@ PrefabInstance:
       propertyPath: cameraMover
       value: 
       objectReference: {fileID: 418033216}
-    - target: {fileID: 6643106248515556012, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
-      propertyPath: cardsPrefabs.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6643106248515556012, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
-      propertyPath: cardsPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: -1323953607945771140, guid: 8b3a1f98cd73f0a469f4fe5ae0877104, type: 3}
     - target: {fileID: 6643106248515556013, guid: f3359b11caee2b541a1a156b72a3a773, type: 3}
       propertyPath: m_Name
       value: Level
