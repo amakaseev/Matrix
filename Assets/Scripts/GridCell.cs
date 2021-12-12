@@ -11,8 +11,11 @@ public class GridCell: MonoBehaviour {
  
   public Vector2Int direction {
     get {
-      // TODO: return _card direction if present this
-      return _direction;
+      if (_card != null) {
+        return _card.direction;
+      } else {
+        return _direction;
+      }
     }
   }
 

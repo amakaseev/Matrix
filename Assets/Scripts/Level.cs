@@ -101,8 +101,6 @@ public class Level: MonoBehaviour {
       RaycastHit hitInfo = new RaycastHit();
       bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(_selectPosition), out hitInfo);
       if (hit && hitInfo.transform.tag == "Cell") {
-        Debug.Log("OnSelect " + hitInfo.transform.gameObject);
-        // TODO: set card to this cell
         hitInfo.transform.gameObject.GetComponent<GridCell>().AddCard(cardsPrefabs[_currentCard]);
       }
     }
