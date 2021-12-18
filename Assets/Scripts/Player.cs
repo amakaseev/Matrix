@@ -24,7 +24,7 @@ public class Player: MonoBehaviour {
     hitpoints = 3;
     gridPosition.x = 0;
     gridPosition.y = 2;
-    transform.position = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
+    transform.position = new Vector3(gridPosition.x * 2, 0, gridPosition.y);
     Actions.OnPlayerUpdateHitpoints(hitpoints);
   }
 
@@ -40,14 +40,14 @@ public class Player: MonoBehaviour {
     isMove = true;
     isBoost = boost;
     gridPosition = pos;
-    targetPosition = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
+    targetPosition = new Vector3(gridPosition.x * 2, 0, gridPosition.y);
   }
 
   public void JumpTo(Vector2Int pos) {
     isMove = true;
     isJump = true;
     gridPosition = pos;
-    targetPosition = new Vector3(gridPosition.x * 2, 1, gridPosition.y);
+    targetPosition = new Vector3(gridPosition.x * 2, 0, gridPosition.y);
   }
 
   public void TakeDamage(int damage) {

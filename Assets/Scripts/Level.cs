@@ -129,7 +129,7 @@ public class Level: MonoBehaviour {
     cameraMover.Restart();
     Time.timeScale = 1;
 
-    gameObject.GetComponent<PlayerInput>().enabled = false;
+    gameObject.GetComponent<PlayerInput>().enabled = true;
   }
 
   void OnPlayerMoveFinish() {
@@ -151,9 +151,9 @@ public class Level: MonoBehaviour {
 
     Actions.OnLineComplete(player.gridPosition.x);
 
-    if (_cells.Count < gridHeight * 20) {
+    // if (_cells.Count < gridHeight * 20) {
       GenerateLine(false);
-    }
+    // }
   }
 
   void Update() {
